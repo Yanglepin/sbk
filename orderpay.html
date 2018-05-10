@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>斯比克在线学习平台-确认付款</title>
+	<link href="css/public.css" rel="stylesheet" type="text/css" />
+	<link href="css/center.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.11.2-min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+		    $('#payment-list li').click(function() {
+		        var obj = $(this);
+		        var itemsObj = $('#payment-list .items');
+		        itemsObj.removeClass('check');
+		        itemsObj.addClass('uncheck');
+		        obj.find('.items').addClass('check');
+		        //修改支付的URL跳转地址
+		        $('#pay-url').text(obj.find('.url').text());
+		    });
+		    $("#paybtn").click(function(){
+		    	window.location.href = $("#pay-url").text();
+		    });
+		});
+	</script>
+		<style type="text/css">
+        body{
+            background: #f5f5f5;
+        }
+		#paybtn{
+			width: 98%;
+			height: 45px;
+			line-height: 45px;
+			margin:0 1%;
+			margin-top: 30px;
+			margin-bottom: 50px;
+			display: block;
+			background: #1983d4;
+			border-radius: 5px;
+			text-align: center;
+			color: #fff;
+			font-size: 1rem;
+		}
+
+        .pay-tips{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            background: #fffff2;
+            border-bottom: 10px solid #f5f5f5;
+            text-indent: 15px;
+            font-size: 0.9em;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="header-wrap clearfix">
+        <div class="header-title">确认付款</div>
+        <a href="details.html"><i class="iconfont left-icon"><img src="images/arrow.png"></i></a>
+    </div>
+	<section>
+		<div style="height: 48px; clear: both;"></div>
+		<div class="order-success">
+			<ul class="order-tips"><span class="iconfont" style="color:#07f; font-size: 1em; margin-right: 10px;"><img src="images/tb45.png"></span>订单已提交</ul>
+			<ul class="order-info">
+               <li style="width: 20%; color: #666666; line-height: 25px; display: inline-block; float: left; font-size: 0.9rem;">课程名称:</li>
+               <li style="width: 76%; display: inline-block; line-height: 25px;font-size: 0.9rem;">在线学习平台微信系统，英语留学、IT互联网、财会金融、公考求职，微信公众号端系统管理后台</li>
+			</ul>
+            <ul class="pay-methord" id="payment-list">
+            	<p style="background-color: #fafafa; height: 50px; line-height: 50px; text-align:right;font-size: 0.9rem;">金额:<span style="color: #CC0000;"> &yen;89.00</span></p>
+                <li class="choose-pay">选择支付方式</li>
+                <li class="alipay">
+                    <span class="alipay-txt">学币支付</span>
+                    <span class="items check"></span>
+                    <span style="display:none" class="url">https://mapi.alipay.com/gateway.do?service=alipay.acquire.page.createandpay&amp;partner=2088811898228540&amp;_input_charset=utf-8&amp;return_url=http%3A%2F%2Fwww.zzhy.com%2Fmobile%2Frespond.php&amp;notify_url=http%3A%2F%2Fwww.zzhy.com%2Fapi%2Fasyn_notify%2Falipay.php&amp;out_trade_no=2016121482195&amp;subject=2016121482195&amp;product_code=FAST_INSTANT_TRADE_PAY&amp;total_fee=59.00&amp;buyer_info=%7B%22buyerName%22%3A%22alice%22%2C%22buyerIdNo%22%3A%22412323198004090140%22%2C%22needBuyerRealnamed%22%3A%22T%22%7D&amp;passback_parameters=alipay&amp;sign=0da314dfc2024f39f092294908f555cb&amp;sign_type=MD5</span>
+                    <span id="pay-url" style="display:none">https://mapi.alipay.com/gateway.do?service=alipay.acquire.page.createandpay&amp;partner=2088811898228540&amp;_input_charset=utf-8&amp;return_url=http%3A%2F%2Fwww.zzhy.com%2Fmobile%2Frespond.php&amp;notify_url=http%3A%2F%2Fwww.zzhy.com%2Fapi%2Fasyn_notify%2Falipay.php&amp;out_trade_no=2016121482195&amp;subject=2016121482195&amp;product_code=FAST_INSTANT_TRADE_PAY&amp;total_fee=59.00&amp;buyer_info=%7B%22buyerName%22%3A%22alice%22%2C%22buyerIdNo%22%3A%22412323198004090140%22%2C%22needBuyerRealnamed%22%3A%22T%22%7D&amp;passback_parameters=alipay&amp;sign=0da314dfc2024f39f092294908f555cb&amp;sign_type=MD5</span>                
+                </li>
+                <li class="payEase">
+                    <span class="payEase-txt">微信支付</span>
+                    <span class="items uncheck"></span>
+                    <span style="display:none" class="url">https://pay.yizhifubj.com/prs/user_payment.checkit?v_mid=10389&amp;v_oid=20161214-10389-10577-2016121482195&amp;v_rcvname=10389&amp;v_rcvaddr=10389&amp;v_rcvtel=18137335175&amp;v_rcvpost=10389&amp;v_amount=59.00&amp;v_ymd=20161214&amp;v_orderstatus=1&amp;v_ordername=&amp;v_moneytype=0&amp;v_url=http%3A%2F%2Fwww.zzhy.com%2Frespond.php&amp;v_producttype=2016121482195&amp;v_idtype=01&amp;v_idnumber=412323198004090140&amp;v_idname=alice&amp;v_idcountry=156&amp;v_idaddress=none&amp;v_userref=64383&amp;v_md5info=d2b65f43b75d1e75f86ab4a870e64aa0</span>
+                </li>
+            </ul>
+            <span id="paybtn">确认付款</span>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>斯比克学习平台-会员中心</title>
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/center.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        #payment-list p { line-height: 35px; color: #333333; text-align: center; }
+        #payment-list p span { background-color: #1983D4; color: #ffffff; text-align: center; padding: 5px 25px; border: 1px solid #F0F0F0; border-radius: 5px;}
+        .details_white {
+			display: none;
+			position: absolute;
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			background-color: white;
+			z-index:1002;
+			overflow: auto;
+			border: 1px solid #F0F0F0;
+			border-radius: 5px;
+		}
+        
+	</style>
+    <script type="text/javascript" src="js/jquery-1.11.2-min.js"></script>
+    <script type="text/javascript">
+	//弹出隐藏层
+	function ShowDiv(show_div,bg_div){
+	document.getElementById(show_div).style.display='block';
+	document.getElementById(bg_div).style.display='block' ;
+	var bgdiv = document.getElementById(bg_div);
+	bgdiv.style.width = document.body.scrollWidth;
+	// bgdiv.style.height = $(document).height();
+	$("#"+bg_div).height($(document).height());
+	};
+	//关闭弹出层
+	function CloseDiv(show_div,bg_div)
+	{
+	document.getElementById(show_div).style.display='none';
+	document.getElementById(bg_div).style.display='none';
+	};
+	</script>
+
+</head>
+<body>
+    <div class="header-wrap clearfix">
+        <div class="header-title">会员中心</div>
+        <a href="memInfo.html"><i class="iconfont left-icon"><img src="images/arrow.png"></i></a>
+        <a href="#"><i class="iconfont right-icon" style="font-size: 1rem;" onclick="ShowDiv('MyDiv','fade')">打卡</i></a>
+    </div>
+    <div style="height: 50px; clear: both;"></div>
+    <div class="user-op">
+        <div class="member-bg clearfix">
+           	 <img src="images/banner.png" width="75" height="75"/>
+           	 <div class="mbg-right">
+           	 	<p><span class="tel">15538156896</span></p>
+           	 	<p>
+           	 		<span class="remain">学币:&yen;3112222.2元</span><br />
+           	 		<span class="item-btn"><a href="cash.html">明细</a></span>
+           	 	</p>
+           	 </div>
+           	 <a href="memInfo.html"><span class="member_icon">&gt;</span></a>
+        </div>
+        
+        <ul>
+        	<li><img src="images/hy.png" class="x1">我的课程</li>
+        	<div class="my-course clearfix">
+        		<ul  class="hy-left">
+        			<li><a href="new_study.html"><img  src="images/kc1.png"/><span>最近学习</span></a></li>
+        		</ul>
+        		<ul  class="hy-right">
+        			<li><a href="course_sc.html"><img src="images/kc2.png"><span>收藏课程</span></a></li>
+        			<li><a href="course_yg.html"><img src="images/kc3.png"><span>已购课程</span></a></li>
+        		</ul>
+        	</div>
+        	
+        	<a href="select_sort.html"><li><img src="images/hy1.png" class="x1">我的练习<span class="item-info iconfont">选择考题></span></li></a>
+        	<div id="list_status" class="clearfix">
+        		<li>
+        			<a href="online_lx.html">
+	        			<img src="images/lx1.png">
+	        			<p>在线练习</p>
+        			</a>
+        		</li>
+        		<li>
+        			<a href="error_book.html">
+	        			<img src="images/lx2.png">
+	        			<p>错题本</p>
+        			</a>
+        		</li>
+        		<li>
+        			<a href="history_lx.html">
+	        			<img src="images/lx3.png">
+	        			<p>练习历史</p>
+        			</a>
+        		</li>
+        		<li>
+        			<a href="title_sc.html">
+	        			<img src="images/lx4.png">
+	        			<p>收藏题目</p>
+        			</a>
+        		</li>
+        	</div>
+            <li><img src="images/hy2.png" class="x1">模拟考试</li>
+            <div id="list_mn" class="clearfix">
+        		<li>
+        			<a href="select_sort.html">
+	        			<img src="images/mn1.png">
+	        			<p>模拟考试</p>
+        			</a>
+        		</li>
+        		<li>
+        			<a href="answer_jx.html">
+	        			<img src="images/mn2.png">
+	        			<p>错误解析</p>
+        			</a>
+        		</li>
+        	</div>
+            <a href="my_erwei.html"><li><img src="images/hy3.png" class="x1">我的推荐二维码<span class="item-info iconfont">></span></li></a>
+            <a href="details_yj.html"><li><img src="images/hy4.png" class="x1">邀请返利<span class="item-info iconfont">></span></li></a>
+            <a href="find_details.html"><li><img src="images/hy5.png" class="x1">关于我们<span class="item-info iconfont">></span></li></a>
+
+        </ul>
+    </div>
+	<div class="ope-btn">
+        <ul class="btn-ok">
+            <li><a href="login.html">退出登录</a></li>
+        </ul>
+   </div>
+   
+<div id="fade" class="black_overlay">
+	</div>
+	<div id="MyDiv" class="details_white">
+		<div style="text-align: right; cursor: default; height: 25px;" id="move">
+			<span style="font-size: 16px;" onclick="CloseDiv('MyDiv','fade')">关闭</span>
+		</div>
+  		<ul id="payment-list" style="padding:0 5% 8% 5%;">
+  	        <p><img src="images/tb45.png"></p>
+  	        <p style="font-size: 1.2rem;">打卡成功</p>
+  	        <p><span onclick="CloseDiv('MyDiv','fade')">确定</span></p>
+ 	 	</ul>
+	</div>
+   
+   
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>斯比克在线学习平台-绑定手机号</title>
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/user.css" rel="stylesheet" type="text/css">
+       <script>
+            var secs = 60;
+            function showtime(t){
+                var mobile = document.getElementById("mNumber").value;
+                var checkTag = true;
+                if(!mobile){
+                    alert("请输入您的手机号~");
+                    return false;
+                }
+                $.ajax({
+                    type:"get",
+                    url:"user.php",
+                    async:false,
+                    data:{act:"send_sms",mobilephone:mobile,
+					type:"register"},
+                    dataType:"text",
+                    success:function(data){
+                        switch(data){
+                            case "1":
+                                alert("短信已发送，请查收");
+                                document.myform.phone.disabled=true;
+                                checkTag = false;
+                                break;
+                            case "2":
+                                alert("请输入手机号~");
+                                break;
+                            case "3":
+                                alert("1分钟后才能重发短信");
+                                break;
+                            case "4":
+                                alert("图形验证码错误，请重新输入~");
+                                break;
+                            case "0":
+                                alert("接收短信已达每天上限，发送失败....");
+                                break;
+                            case "5":
+                                alert("用户名已存在");
+                                break;
+                            default:
+                                alert(data);
+                                break;
+                        }
+                    },
+                    error:function(){alert("发送失败....");checkTag = true;}
+                });
+
+                if(checkTag){
+                    document.myform.phone.disabled=false;
+                    return false;
+                }
+
+                for(i=1;i<=t;i++) {
+                    window.setTimeout("update_p(" + i + ","+t+")", i * 1000);
+                }
+            }
+            function update_p(num,t) {
+                if(num == t) {
+                    document.myform.phone.value =" 重新发送 ";
+                    document.myform.phone.disabled=false;
+                }
+                else {
+                    printnr = t-num;
+                    document.myform.phone.value = " (" + printnr +")秒后重新发送";
+                }
+            }
+        </script>
+</head>
+
+<body class="user-body">
+    <div class="header-wrap clearfix">
+		<div class="header-title">绑定手机号</div>
+		<a href="Member.html"><i class="iconfont left-icon"><img src="images/arrow.png"></i></a>
+	</div>
+    <div style="height: 48px; clear: both;"></div>
+    <form id="registerform" method="post" name="registerform" onSubmit="return checkadd(this)">
+    <div class="login-form">
+        <ul>
+            <li class="u-name"><i class="iconfont1">手机号:</i></li>
+            <li class="u-input"><input id="mNumber" name="mNumber" type="text" placeholder="15568156896"/></li>
+        </ul>
+        <ul>
+            <li class="u-pass"><i class="iconfont1">验证码:</i></li>
+            <li class="u-input-vcode"><input type="text" name="vcode" id="vcode" placeholder="请输入短信验证码" /></li>
+            <li class="get-btn"><input type="button" value="获取"  id="phone_btn" name="phone" onclick="showtime(60)"></li>
+        </ul>
+    </div>
+    <div class="ope-btn">
+        <ul class="btn-ok">
+            <li><input type="submit" value="立即绑定" class="registsubmit"></li>
+        </ul>
+    </div>
+    <input type="hidden" name="editInfo" value="editInfo">
+    </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>斯比克学习平台-个人信息</title>
+    <link href="css/public.css" rel="stylesheet" type="text/css">
+    <link href="css/user.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript">
+<!--
+function checkadd(theForm)
+{
+	if(theForm.mName.value=="")
+		{
+			alert("请填写用户名！")
+			theForm.mName.focus();
+			return false;
+		}
+	if(theForm.mNc.value=="")
+		{
+			alert("请填写昵称！")
+			theForm.mNc.focus();
+			return false;
+		}
+	
+	return true;
+}
+//-->
+</script>
+</head>
+<body class="user-body">
+	<div class="header-wrap clearfix">
+		<div class="header-title">个人信息</div>
+		<a href="login.html"><i class="iconfont left-icon"><img src="images/arrow.png"></i></a>
+	</div>
+	
+    <div style="height: 45px; clear: both;"></div>
+    <form name="form1" method="post" action="" onSubmit="return checkadd(this)">
+	    <div class="login-form">
+	       
+	        <ul>
+	            <li class="u-name"><i class="iconfont1">头像:</i><span class="info_img"><img src="images/tb20.png"></span><span class="info_icon">></span></li>
+	            
+	        </ul>
+	
+	        <ul>
+	            <li class="u-name"><i class="iconfont1">用户名:</i></li>
+	            <li class="u-input"><input id="mName" name="mName" type="text" placeholder="15568156896"/></li>
+	        </ul>
+	
+			<ul>
+	            <li class="u-name"><i class="iconfont1">昵称:</i></li>
+	            <li class="u-input"><input id="mNc" name="mNc" type="text" placeholder="瘦牛"/></li>
+	        </ul>
+	
+	    </div>
+	        <div class="ope-btn">
+	            <ul class="btn-ok" style="border-bottom:none; background:none;">
+	                <li><input type="submit" value="保存" class="registsubmit"></li>
+	            </ul>
+	        </div>
+	    <input type="hidden" name="editInfo" value="editInfo">    
+    </form>
+</body>
+</html>
+

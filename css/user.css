@@ -1,0 +1,142 @@
+body{
+    background: #fff;
+}
+/*登录*/
+/*login & reg form*/
+.login-form{
+    width: 100%;
+    margin-top: 15px;
+}
+.login-form ul{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+}
+.login-form .u-forget{
+    height: 60px;
+    line-height: 60px;
+    background: #f9f8f6;
+    border-bottom: none;
+    text-align: right;
+}
+.u-forget a{
+    color: #999;
+    padding-right: 10px;
+}
+.u-name,.u-pass{
+    width: 25%;
+    text-align: center;
+    float: left;
+    padding-left:10px;
+}
+.u-input{
+    width: 70%;
+    float: left;
+    padding-left:5px;
+}
+.u-input input{
+    width: 95%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 1em;
+    color: #999;
+    text-indent: 5px;
+    border:none;
+    border-radius: 3px;
+}
+.u-input-vcode{
+    width: 40%;
+    float: left;
+}
+.u-input-vcode input{
+    width: 95%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #999;
+    text-indent: 5px;
+    border:none;
+    border-radius: 3px;
+}
+.get-btn{
+    width: 30%;
+    float: left;
+}
+.get-btn input{
+    width: 42%;
+    height: 25px;
+    margin-left: 45% ;
+    border-radius: 20px;
+    background: #fff;
+    color: #1983d4;
+    border: 1px solid #1983d4;
+    font-size: 1rem;
+}
+.login p {
+	text-align: center;
+}
+.login p img{
+	margin-top:10%;
+}
+.u-select select{
+    font-size: 1.2em;
+    border: none;
+    width: 28%;
+    margin-right:1%;
+}
+.ope-btn{
+    width: 100%;
+    float: left;
+}
+.mlx{ margin: 0 auto;width:100%; overflow: hidden;background: #fff; max-width:720px;font-family:"微软雅黑"; font-size: 0.4rem;height:0.8rem; line-height:0.8rem; text-align:center; border-bottom:1px solid #dcdcdc; background:#e0e0e0;}
+.take { text-align: center;}
+.take img { display: inline-block; width: 35%; margin: 15% 3% 0 3%;  border: 1px solid #e5e5e5;}
+
+
+.info_img img {
+	position: absolute;
+	left: 78%;
+	border: 1px solid #1983d4;
+	border-radius: 50%;
+	margin-top: 10px;
+}
+.info_icon {
+	position: absolute;
+	left: 93%;
+	font-size: 1.5rem;
+}
+.erwei_tj {
+	min-height: 645px;
+	background-color: #f3f3f3;
+	padding-top: 10%;
+	text-align: center;
+}
+.erwei_tj img {
+	width: 50%;
+}
+.erwei_tj h2{
+	margin: 5% 0;
+	font-size: 1.2rem;
+	color:#333333;
+}
+.erwei_tj h2 img {
+	width: 30%;
+}
+.erwei_tj p span{
+	color: #666666;
+	font-size: 1rem;
+	line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
